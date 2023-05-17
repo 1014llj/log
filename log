@@ -1,0 +1,532 @@
+student@student-MS-7C35:/media/student/stu/llj/pythonProject/ld-4$ ./tools/dist_train.sh configs/ld/ld_r50_gflv1_r101_fpn_coco_1x.py 2
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+fatal: not a git repository (or any parent up to mount point /media/student)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+fatal: not a git repository (or any parent up to mount point /media/student)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2023-05-15 20:39:30,661 - mmdet - INFO - Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.8.0 | packaged by conda-forge | (default, Nov 22 2019, 19:11:38) [GCC 7.3.0]
+CUDA available: True
+GPU 0: NVIDIA Graphics Device
+GPU 1: NVIDIA GeForce RTX 3060
+CUDA_HOME: /usr/local/cuda11.1
+GCC: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+PyTorch: 1.12.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.4-Product Build 20210904 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.3
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 8.3.2  (built against CUDA 11.5)
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.3, CUDNN_VERSION=8.3.2, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.12.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=OFF, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+TorchVision: 0.13.1
+OpenCV: 4.6.0
+MMCV: 1.7.0
+MMCV Compiler: GCC 9.3
+MMCV CUDA Compiler: 11.3
+MMDetection: 2.10.0+
+------------------------------------------------------------
+
+2023-05-15 20:39:31,144 - mmdet - INFO - Distributed training: True
+2023-05-15 20:39:31,621 - mmdet - INFO - Config:
+dataset_type = 'CocoDataset'
+data_root = 'data/coco/'
+img_norm_cfg = dict(
+    mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
+train_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(1333, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[123.675, 116.28, 103.53],
+        std=[58.395, 57.12, 57.375],
+        to_rgb=True),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[123.675, 116.28, 103.53],
+                std=[58.395, 57.12, 57.375],
+                to_rgb=True),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=3,
+    workers_per_gpu=2,
+    train=dict(
+        type='CocoDataset',
+        ann_file=
+        '/media/student/stu/llj/complete-coco/annotations/instances_train2017.json',
+        img_prefix='/media/student/stu/llj/complete-coco/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(1333, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[123.675, 116.28, 103.53],
+                std=[58.395, 57.12, 57.375],
+                to_rgb=True),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ]),
+    val=dict(
+        type='CocoDataset',
+        ann_file=
+        '/media/student/stu/llj/complete-coco/annotations/instances_val2017.json',
+        img_prefix='/media/student/stu/llj/complete-coco/val2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[123.675, 116.28, 103.53],
+                        std=[58.395, 57.12, 57.375],
+                        to_rgb=True),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ]),
+    test=dict(
+        type='CocoDataset',
+        ann_file=
+        '/media/student/stu/llj/complete-coco/annotations/instances_val2017.json',
+        img_prefix='/media/student/stu/llj/complete-coco/val2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[123.675, 116.28, 103.53],
+                        std=[58.395, 57.12, 57.375],
+                        to_rgb=True),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ]))
+evaluation = dict(interval=1, metric='bbox')
+optimizer = dict(type='SGD', lr=0.00375, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(
+    policy='step',
+    warmup='linear',
+    warmup_iters=500,
+    warmup_ratio=0.001,
+    step=[8, 11])
+runner = dict(type='EpochBasedRunner', max_epochs=12)
+checkpoint_config = dict(interval=1)
+log_config = dict(interval=50, hooks=[dict(type='TextLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = None
+resume_from = None
+workflow = [('train', 1)]
+teacher_ckpt = 'https://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_r101_fpn_mstrain_2x_coco/gfl_r101_fpn_mstrain_2x_coco_20200629_200126-dd12f847.pth'
+model = dict(
+    type='KnowledgeDistillationSingleStageDetector',
+    pretrained='torchvision://resnet50',
+    teacher_config='configs/gfl/gfl_r101_fpn_mstrain_2x_coco.py',
+    teacher_ckpt=
+    'https://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_r101_fpn_mstrain_2x_coco/gfl_r101_fpn_mstrain_2x_coco_20200629_200126-dd12f847.pth',
+    output_feature=True,
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=True),
+        norm_eval=True,
+        style='pytorch'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        start_level=1,
+        add_extra_convs='on_output',
+        num_outs=5),
+    bbox_head=dict(
+        type='LDHead',
+        num_classes=80,
+        in_channels=256,
+        stacked_convs=4,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            ratios=[1.0],
+            octave_base_scale=8,
+            scales_per_octave=1,
+            strides=[8, 16, 32, 64, 128]),
+        loss_cls=dict(
+            type='QualityFocalLoss',
+            use_sigmoid=True,
+            beta=2.0,
+            loss_weight=1.0),
+        loss_dfl=dict(type='DistributionFocalLoss', loss_weight=0.25),
+        loss_ld=dict(
+            type='KnowledgeDistillationKLDivLoss', loss_weight=0.25, T=10),
+        reg_max=16,
+        loss_bbox=dict(type='GIoULoss', loss_weight=2.0),
+        loss_ld_vlr=dict(
+            type='KnowledgeDistillationKLDivLoss', loss_weight=0.25, T=10),
+        loss_kd=dict(type='DKD', loss_weight=10, T=2),
+        loss_im=dict(type='IMLoss', loss_weight=2.0),
+        imitation_method='finegrained'),
+    train_cfg=dict(
+        assigner=dict(type='ATSSAssigner', topk=9),
+        allowed_border=-1,
+        pos_weight=-1,
+        debug=False),
+    test_cfg=dict(
+        nms_pre=1000,
+        min_bbox_size=0,
+        score_thr=0.05,
+        nms=dict(type='nms', iou_threshold=0.6),
+        max_per_img=100))
+work_dir = './work_dirs/ld_r50_gflv1_r101_fpn_coco_1x'
+gpu_ids = range(0, 2)
+
+2023-05-15 20:39:31,784 - mmdet - INFO - load model from: torchvision://resnet50
+2023-05-15 20:39:31,784 - mmdet - INFO - load checkpoint from torchvision path: torchvision://resnet50
+2023-05-15 20:39:32,754 - mmdet - WARNING - The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: fc.weight, fc.bias
+
+2023-05-15 20:39:33,028 - mmdet - INFO - load model from: torchvision://resnet101
+2023-05-15 20:39:33,028 - mmdet - INFO - load checkpoint from torchvision path: torchvision://resnet101
+2023-05-15 20:39:33,280 - mmdet - WARNING - The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: fc.weight, fc.bias
+
+load checkpoint from http path: https://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_r101_fpn_mstrain_2x_coco/gfl_r101_fpn_mstrain_2x_coco_20200629_200126-dd12f847.pth
+load checkpoint from http path: https://download.openmmlab.com/mmdetection/v2.0/gfl/gfl_r101_fpn_mstrain_2x_coco/gfl_r101_fpn_mstrain_2x_coco_20200629_200126-dd12f847.pth
+loading annotations into memory...
+loading annotations into memory...
+Done (t=11.85s)
+creating index...
+Done (t=11.84s)
+creating index...
+index created!
+index created!
+fatal: not a git repository (or any parent up to mount point /media/student)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+fatal: not a git repository (or any parent up to mount point /media/student)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.35s)
+creating index...
+Done (t=0.35s)
+creating index...
+index created!
+index created!
+2023-05-15 20:39:47,100 - mmdet - INFO - Start running, host: student@student-MS-7C35, work_dir: /media/student/stu/llj/pythonProject/ld-4/work_dirs/ld_r50_gflv1_r101_fpn_coco_1x
+2023-05-15 20:39:47,100 - mmdet - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) StepLrUpdaterHook                  
+(NORMAL      ) CheckpointHook                     
+(NORMAL      ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) StepLrUpdaterHook                  
+(NORMAL      ) DistSamplerSeedHook                
+(NORMAL      ) DistEvalHook                       
+(NORMAL      ) NumClassCheckHook                  
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) StepLrUpdaterHook                  
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(ABOVE_NORMAL) OptimizerHook                      
+(NORMAL      ) CheckpointHook                     
+(NORMAL      ) DistEvalHook                       
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) CheckpointHook                     
+(NORMAL      ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_val_epoch:
+(NORMAL      ) DistSamplerSeedHook                
+(NORMAL      ) NumClassCheckHook                  
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_epoch:
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+after_run:
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+2023-05-15 20:39:47,100 - mmdet - INFO - workflow: [('train', 1)], max: 12 epochs
+2023-05-15 20:39:47,101 - mmdet - INFO - Checkpoints will be saved to /media/student/stu/llj/pythonProject/ld-4/work_dirs/ld_r50_gflv1_r101_fpn_coco_1x by HardDiskBackend.
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [0,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [1,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [2,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [3,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [4,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [5,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [6,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [7,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [8,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [9,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [10,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [11,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [12,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [13,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [14,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [15,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [16,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [17,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [18,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [19,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [20,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [21,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [22,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [23,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [24,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [25,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [26,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [27,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [28,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [7,0,0], thread: [29,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [64,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [65,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [66,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [67,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [68,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [69,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [70,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [71,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [72,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [73,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [74,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [75,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [76,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [77,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [78,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [79,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [80,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [81,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [82,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [83,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [84,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [85,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [86,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [87,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [88,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [89,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [90,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [91,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [92,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [93,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [94,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [6,0,0], thread: [95,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [0,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [1,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [2,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [3,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [4,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [5,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [6,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [7,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [8,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [9,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [10,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [11,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [12,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [13,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [14,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [15,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [16,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [17,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [18,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [19,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [20,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [21,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [22,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [23,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [24,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [25,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [26,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [27,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [28,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [29,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [30,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [4,0,0], thread: [31,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [0,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [1,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [2,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [3,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [4,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [5,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [6,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [7,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [8,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [9,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [10,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [11,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [12,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [13,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [14,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [15,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [16,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [17,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [18,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [19,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [20,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [21,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [22,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [23,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [24,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [25,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [26,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [27,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [28,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [29,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [30,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+/opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/native/cuda/ScatterGatherKernel.cu:365: operator(): block: [3,0,0], thread: [31,0,0] Assertion `idx_dim >= 0 && idx_dim < index_size && "index out of bounds"` failed.
+terminate called after throwing an instance of 'c10::CUDAError'
+  what():  CUDA error: device-side assert triggered
+Exception raised from query at /opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/cuda/CUDAEvent.h:91 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x57 (0x7f443ef7c497 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::finishedGPUExecutionInternal() const + 0x13c (0x7f4478fd9d8c in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libtorch_cuda_cpp.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::isCompleted() + 0x58 (0x7f4478fdbd68 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libtorch_cuda_cpp.so)
+frame #3: c10d::ProcessGroupNCCL::workCleanupLoop() + 0x221 (0x7f4478fdd2f1 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libtorch_cuda_cpp.so)
+frame #4: <unknown function> + 0xcda93 (0x7f4491a1da93 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/../../../../libstdc++.so.6)
+frame #5: <unknown function> + 0x76db (0x7f44baf876db in /lib/x86_64-linux-gnu/libpthread.so.0)
+frame #6: clone + 0x3f (0x7f44bacb071f in /lib/x86_64-linux-gnu/libc.so.6)
+
+terminate called after throwing an instance of 'c10::CUDAError'
+  what():  CUDA error: device-side assert triggered
+Exception raised from query at /opt/conda/conda-bld/pytorch_1659484810403/work/aten/src/ATen/cuda/CUDAEvent.h:91 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x57 (0x7f08a5bf0497 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::finishedGPUExecutionInternal() const + 0x13c (0x7f08dfc4dd8c in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libtorch_cuda_cpp.so)
+frame #2: c10d::ProcessGroupNCCL::WorkNCCL::isCompleted() + 0x58 (0x7f08dfc4fd68 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libtorch_cuda_cpp.so)
+frame #3: c10d::ProcessGroupNCCL::workCleanupLoop() + 0x221 (0x7f08dfc512f1 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/libtorch_cuda_cpp.so)
+frame #4: <unknown function> + 0xcda93 (0x7f08f8691a93 in /home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/lib/../../../../libstdc++.so.6)
+frame #5: <unknown function> + 0x76db (0x7f0921bfb6db in /lib/x86_64-linux-gnu/libpthread.so.0)
+frame #6: clone + 0x3f (0x7f092192471f in /lib/x86_64-linux-gnu/libc.so.6)
+
+ERROR:torch.distributed.elastic.multiprocessing.api:failed (exitcode: -6) local_rank: 0 (pid: 2698) of binary: /home/student/anaconda3/envs/llj-mmlab/bin/python
+Traceback (most recent call last):
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/runpy.py", line 192, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/distributed/launch.py", line 193, in <module>
+    main()
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/distributed/launch.py", line 189, in main
+    launch(args)
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/distributed/launch.py", line 174, in launch
+    run(args)
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/distributed/run.py", line 752, in run
+    elastic_launch(
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 131, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/student/anaconda3/envs/llj-mmlab/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 245, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+=====================================================
+./tools/train.py FAILED
+-----------------------------------------------------
+Failures:
+[1]:
+  time      : 2023-05-15_20:40:13
+  host      : student-MS-7C35
+  rank      : 1 (local_rank: 1)
+  exitcode  : -6 (pid: 2699)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 2699
+-----------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-05-15_20:40:13
+  host      : student-MS-7C35
+  rank      : 0 (local_rank: 0)
+  exitcode  : -6 (pid: 2698)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 2698
+=====================================================
+
